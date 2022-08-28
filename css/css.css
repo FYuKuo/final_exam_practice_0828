@@ -379,3 +379,12 @@ cursor:default;
 .activeNews {
 	display: block;
 }
+
+.goodBtn {
+	cursor: pointer;
+	color: blue;
+}
+
+.myClick {
+	cursor: pointer;
+}
