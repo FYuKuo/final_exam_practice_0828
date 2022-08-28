@@ -107,7 +107,7 @@ class DB
 
     public function math($math,$col,...$arg)
     {
-        $sql = "SELECT $math($col) FROM `$this->table` ";
+        $sql = "SELECT $math(`$col`) FROM `$this->table` ";
 
         if(isset($arg[0])){
             
@@ -129,6 +129,7 @@ class DB
             $sql .= $arg[1];
         }
 
+        // echo $sql;
         return $this->pdo->exec($sql);
     }
 }
@@ -144,5 +145,36 @@ function dd($array){
 
 function to($url){
     header("location:$url");
+}
+
+$View = new DB('view');
+$Log = new DB('log');
+$Admin = new DB('admin');
+$News = new DB('news');
+$Que = new DB('que');
+$Opt = new DB('opt');
+
+
+$view = $View->find(['date'=>date('Y-m-d')]);
+
+if(!isset($_SESSION['view'])){
+
+    if(!empty($view)){
+    
+        $view['total'] ++;
+        $View->save($view);
+    
+    }else{
+    
+        $View->save(['date'=>date('Y-m-d'),'total'=>1]);
+    
+    }
+    
+    $_SESSION['view'] = 1;
+}
+
+$viewSum = 0;
+foreach ($View->all() as $key => $value) {
+    $viewSum += $value['total'];
 }
 ?>

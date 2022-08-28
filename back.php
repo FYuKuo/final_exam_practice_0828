@@ -34,9 +34,9 @@ $do = ($_GET['do'])??'main';
 		<div id="mm">
 
 			<div class="hal" id="lef">
-				<a class="blo" href="./index.php">回首頁</a>
-				<a class="blo" href="?do=news">最新文章</a>
-				<a class="blo" href="?do=que">問卷調查</a>
+				<a class="blo" href="?do=admin">帳號管理</a>
+				<a class="blo" href="?do=news">最新文章管理</a>
+				<a class="blo" href="?do=que">問卷管理</a>
 			</div>
 
 			<div class="hal" id="main">
@@ -76,10 +76,10 @@ $do = ($_GET['do'])??'main';
 					<div class="content">
 
 						<?php
-						if(file_exists('./front/'.$do.'.php')){
-							include('./front/'.$do.'.php');
+						if(file_exists('./back/'.$do.'.php')){
+							include('./back/'.$do.'.php');
 						}else{
-							include('./front/main.php');
+							include('./back/main.php');
 						}
 						?>
 
