@@ -31,7 +31,7 @@ $do = ($_GET['do'])??'main';
 
 		<div id="title2" title="回首頁">
 			<a href="./index.php">
-				<img src="./icon/02B01.jpg" alt="回首頁">
+				<img src="./icon/02B05.jpg" alt="回首頁">
 			</a>
 		</div>
 
