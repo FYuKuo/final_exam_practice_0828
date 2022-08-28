@@ -351,3 +351,31 @@ cursor:default;
 .w-10 {
 	width: 10%;
 }
+
+.news_btns {
+	margin-left: 2px;
+}
+
+.news_btn {
+	padding: 5px 10px;
+	background-color: #eee;
+	border: 1px solid black;
+	margin-left: -1px;
+	cursor: pointer;
+}
+
+.activeBtn {
+	background-color: white;
+}
+
+.news_item {
+	border: 1px solid black;
+	margin-left: 1px;
+	margin-top: -1px;
+	padding: 10px 20px;
+	display: none;
+}
+
+.activeNews {
+	display: block;
+}
