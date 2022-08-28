@@ -34,7 +34,7 @@
                 </td>
                 <td class="ct">
                     <?php
-                    if ($_SESSION['user']) {
+                    if (isset($_SESSION['user'])) {
                         if (empty($Log->find(['news' => $row['id'], 'user' => $_SESSION['user']]))) {
                     ?>
                     <span class="goodBtn" onclick="add_good(<?=$row['id'];?>,<?=($row['good']+1);?>,1)">讚</span>
